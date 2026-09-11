@@ -13,6 +13,26 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "author": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "readingStatus": {
+      "type": "enumeration",
+      "enum": [
+        "planned",
+        "reading",
+        "finished"
+      ]
+    },
+    "rating": {
+      "type": "decimal"
     }
   }
 }
