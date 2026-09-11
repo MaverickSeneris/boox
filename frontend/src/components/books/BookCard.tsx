@@ -12,7 +12,7 @@ export default function BookCard({ book }: BookCardProps) {
         <h2 className="text-2xl font-bold">{book.title}</h2>
       </Link>
       <p>{book.author}</p>
-      <p>{book.status}</p>
+      <p>{book.readingStatus}</p>
       <p>{book.rating ?? "No Rating"}</p>
     </li>
   )
