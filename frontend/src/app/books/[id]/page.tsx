@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getBook } from "@/data/books";
+import { getBook } from "@/lib/strapi/books";
 
 export default async function BookDetails({
   params,
