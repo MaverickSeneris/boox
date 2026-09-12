@@ -1,4 +1,4 @@
-import { getBooks } from "@/data/books";
+import { getBooks } from "@/lib/strapi/books";
 import BookCard from "@/components/books/BookCard";
 
 export default async function BooksPage() {
