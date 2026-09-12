@@ -1,20 +1,25 @@
 import type { Book } from "@/types/book";
 
-export const books: Book [] = [
-  {
-    id: "1",
-        title: "Meditations",
-        author: "Marcus Aurelius",
-        description: "Personal reflections on Stoic philosophy.",
-        status: "reading",
-        rating: 3.5,
-  },
-  {
-    id: "2",
-        title: "Clean Code",
-        author: "Robert C. Martin",
-        description: "A practical guide to writing maintainable software.",
-        status: "planned",
-        rating: null,
-  }
-]
+const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL ?? "http://localhost:1337";
+
+export async function getBooks(): Promise<Book[]> {
+  const res = await fetch(`${STRAPI_URL}/api/books`, {
+    next: { revalidate: 60 },
+  });
+
+  if (!res.ok) return [];
+
+  const json = await res.json();
+  return json.data;
+}
+
+export async function getBook(documentId: string): Promise<Book | null> {
+  const res = await fetch(`${STRAPI_URL}/api/books/${documentId}`, {
+    next: { revalidate: 60 },
+  });
+
+  if (!res.ok) return null;
+
+  const json = await res.json();
+  return json.data;
+}

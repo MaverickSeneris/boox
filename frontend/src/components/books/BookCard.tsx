@@ -8,7 +8,7 @@ type BookCardProps = {
 export default function BookCard({ book }: BookCardProps) {
   return (
     <li className="mb-4">
-      <Link href={`/books/${book.id}`}>
+      <Link href={`/books/${book.documentId}`}>
         <h2 className="text-2xl font-bold">{book.title}</h2>
       </Link>
       <p>{book.author}</p>

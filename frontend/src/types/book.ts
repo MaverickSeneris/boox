@@ -1,8 +1,10 @@
 export type Book = {
-  id: string;
+  id: number;
+  documentId: string;
   title: string;
+  slug: string | null;
   author: string;
   description: string;
-  status: "planned" | "reading" | "finished";
+  readingStatus: "planned" | "reading" | "finished" | null;
   rating: number | null;
-}
+};
