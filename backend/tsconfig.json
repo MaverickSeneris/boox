@@ -33,14 +33,12 @@
     ".cache/",
     ".tmp/",
     ".strapi/",
-
+    "scripts/",
     // Do not include admin files in the server compilation
     "src/admin/",
     // Do not include test files
     "**/*.test.*",
     // Do not include plugins in the server compilation
-    "src/plugins/**",
-    // One-off scripts run via tsx, not Strapi build
-    "scripts/"
+    "src/plugins/**"
   ]
 }
