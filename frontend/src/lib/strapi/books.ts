@@ -1,6 +1,6 @@
 import type { Book } from "@/types/book";
 
-const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL ?? "http://localhost:1337";
+const STRAPI_URL = process.env.STRAPI_URL ?? "http://localhost:1337";
 
 export async function getBooks(): Promise<Book[]> {
   const res = await fetch(`${STRAPI_URL}/api/books`, {
